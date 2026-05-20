@@ -121,19 +121,19 @@
 
             <div class="hero__stats reveal" data-reveal data-stagger="6">
               <div class="stat stat--glass">
-                <span class="stat__value" data-count="5">0</span>
+                <span class="stat__value" data-count="1">0</span>
                 <span class="stat__suffix">+</span>
                 <span class="stat__label">Tahun Pengalaman</span>
               </div>
               <div class="stat stat--glass">
-                <span class="stat__value" data-count="32">0</span>
+                <span class="stat__value" data-count="{{ $repoCount ?? 5 }}">0</span>
                 <span class="stat__suffix">+</span>
-                <span class="stat__label">Proyek Selesai</span>
+                <span class="stat__label">Proyek Portofolio</span>
               </div>
               <div class="stat stat--glass">
-                <span class="stat__value" data-count="14">0</span>
-                <span class="stat__suffix"></span>
-                <span class="stat__label">Klien Puas</span>
+                <span class="stat__value" data-count="3">0</span>
+                <span class="stat__suffix">+</span>
+                <span class="stat__label">Teknologi Dikuasai</span>
               </div>
             </div>
 
