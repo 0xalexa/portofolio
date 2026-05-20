@@ -368,32 +368,32 @@
           </header>
           <ol class="timeline">
             <li class="timeline__item reveal" data-reveal>
-              <span class="timeline__date">2024 — Sekarang</span>
+              <span class="timeline__date">2025 — Sekarang</span>
               <div class="timeline__card">
-                <h3 class="timeline__role">Undergraduate Informatics Student (Semester 4)</h3>
-                <p class="timeline__company">Computer Science & Web Engineering</p>
+                <h3 class="timeline__role">Personal Web Projects</h3>
+                <p class="timeline__company">Eksplorasi Mandiri & Portofolio</p>
                 <p class="timeline__text">
-                  Fokus mempelajari dasar-dasar pemrograman, rekayasa perangkat lunak, struktur data, dan pengembangan aplikasi web.
+                  Merancang, membangun, dan mengoptimalkan proyek web fungsional guna mengimplementasikan logika pemrograman tingkat lanjut, integrasi basis data relasional, serta penerapan arsitektur web modern.
                 </p>
               </div>
             </li>
             <li class="timeline__item reveal" data-reveal>
               <span class="timeline__date">2024 — 2025</span>
               <div class="timeline__card">
-                <h3 class="timeline__role">Web Development Bootcamp & Course</h3>
-                <p class="timeline__company">Full-Stack Web Development Program</p>
+                <h3 class="timeline__role">Web Development Program</h3>
+                <p class="timeline__company">Bootcamp & Pelatihan Intensif</p>
                 <p class="timeline__text">
-                  Mengikuti pelatihan intensif pemrograman web untuk menguasai HTML, CSS, JavaScript, PHP, Laravel, serta manajemen database MySQL.
+                  Membangun pemahaman komprehensif dan keterampilan praktis dalam perancangan antarmuka web responsif (HTML, CSS, JavaScript) serta pengelolaan data dinamis berbasis framework PHP dan Laravel.
                 </p>
               </div>
             </li>
             <li class="timeline__item reveal" data-reveal>
-              <span class="timeline__date">2025 — Sekarang</span>
+              <span class="timeline__date">2024 — Sekarang</span>
               <div class="timeline__card">
-                <h3 class="timeline__role">Junior Web Developer</h3>
-                <p class="timeline__company">Self-Employed / Personal Projects</p>
+                <h3 class="timeline__role">Mahasiswa Teknologi Rekayasa Perangkat Lunak</h3>
+                <p class="timeline__company">Program Sarjana Terapan</p>
                 <p class="timeline__text">
-                  Membangun portofolio dinamis, mengintegrasikan sistem database Laravel, dan terus berlatih mengimplementasikan arsitektur web modern.
+                  Mendalami fondasi rekayasa perangkat lunak, perancangan arsitektur basis data, serta penerapan praktis metodologi pengembangan aplikasi web modern secara sistematis dan terstruktur.
                 </p>
               </div>
             </li>
