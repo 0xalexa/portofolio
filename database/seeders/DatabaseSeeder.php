@@ -28,7 +28,7 @@ class DatabaseSeeder extends Seeder
             'email' => 'budi.santoso@gmail.com',
             'phone' => '081234567890',
             'subject' => 'Tanya Desain Website',
-            'message' => 'Halo Alex, saya sangat menyukai portofolio Anda. Apakah Anda bersedia mengerjakan proyek landing page untuk bisnis UMKM saya?',
+            'message' => 'Halo Alex, saya sangat menyukai portofolio Anda. Apakah Anda bersedia mengerjakan proyek?',
         ]);
 
         Contact::create([
@@ -36,7 +36,7 @@ class DatabaseSeeder extends Seeder
             'email' => 'siti.rahma@yahoo.com',
             'phone' => '085678901234',
             'subject' => 'Kolaborasi Agensi',
-            'message' => 'Hai Alex, kami dari agensi kreatif ingin menawarkan kolaborasi freelance untuk proyek-proyek Laravel ke depan. Apakah Anda tertarik?',
+            'message' => 'Hai Alex, kami dari agensi kreatif ingin menawarkan kolaborasi freelance?',
         ]);
 
         Contact::create([
@@ -44,7 +44,7 @@ class DatabaseSeeder extends Seeder
             'email' => 'john.doe@example.com',
             'phone' => '+15550199',
             'subject' => 'Freelance Laravel Project',
-            'message' => 'Hi Alex, I am looking for a junior developer to help build a dynamic web application. Let me know if you are available for a remote gig.',
+            'message' => 'Hi Alex, I am looking for a junior developer.',
         ]);
     }
 }
