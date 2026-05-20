@@ -57,6 +57,9 @@
           <li><a class="nav__link" href="#work">Portofolio</a></li>
           <li><a class="nav__link" href="#timeline">Perjalanan</a></li>
           <li>
+            <a class="nav__link" href="{{ asset('cv/Alex_Kusuma_Wardana_CV.pdf') }}" download="Alex_Kusuma_Wardana_CV.pdf">Unduh CV</a>
+          </li>
+          <li>
             <a class="nav__link nav__link--cta" href="#contact">Kontak</a>
           </li>
         </ul>

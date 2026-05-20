@@ -23,4 +23,13 @@ Route::get('/', function () {
 Route::get('/index', function () {
     return redirect('/');
 });
-Route::post('/contact', [App\Http\Controllers\ContactController::class, 'store'])->name('contact.store');
+Route::get('/cv', function () {
+    $path = public_path('cv/Alex_Kusuma_Wardana_CV.pdf');
+    if (!file_exists($path)) {
+        $pathDouble = public_path('cv/Alex_Kusuma_Wardana_CV.pdf.pdf');
+        if (file_exists($pathDouble)) {
+            $path = $pathDouble;
+        }
+    }
+    return response()->download($path, 'Alex_Kusuma_Wardana_CV.pdf');
+});
