@@ -363,37 +363,37 @@
         <div class="container section__wrap">
           <span class="section__index" aria-hidden="true">04</span>
           <header class="section__head reveal" data-reveal>
-            <span class="section__eyebrow">Perjalanan Karir</span>
-            <h2 class="section__title">Pengalaman Kerja</h2>
+            <span class="section__eyebrow">Perjalanan Saya</span>
+            <h2 class="section__title">Pendidikan & Pengalaman</h2>
           </header>
           <ol class="timeline">
             <li class="timeline__item reveal" data-reveal>
-              <span class="timeline__date">2023 — Sekarang</span>
+              <span class="timeline__date">2024 — Sekarang</span>
               <div class="timeline__card">
-                <h3 class="timeline__role">Senior Web Developer</h3>
-                <p class="timeline__company">Teknologi Nusantara Sejahtera</p>
+                <h3 class="timeline__role">Undergraduate Informatics Student (Semester 4)</h3>
+                <p class="timeline__company">Computer Science & Web Engineering</p>
                 <p class="timeline__text">
-                  Memimpin penerapan sistem desain modern dan mementori tim developer junior.
+                  Fokus mempelajari dasar-dasar pemrograman, rekayasa perangkat lunak, struktur data, dan pengembangan aplikasi web.
                 </p>
               </div>
             </li>
             <li class="timeline__item reveal" data-reveal>
-              <span class="timeline__date">2020 — 2023</span>
+              <span class="timeline__date">2024 — 2025</span>
               <div class="timeline__card">
-                <h3 class="timeline__role">Frontend Engineer</h3>
-                <p class="timeline__company">Kreatif Solusi Digital</p>
+                <h3 class="timeline__role">Web Development Bootcamp & Course</h3>
+                <p class="timeline__company">Full-Stack Web Development Program</p>
                 <p class="timeline__text">
-                  Membangun arsitektur website responsif untuk kampanye pemasaran dan platform interaktif klien.
+                  Mengikuti pelatihan intensif pemrograman web untuk menguasai HTML, CSS, JavaScript, PHP, Laravel, serta manajemen database MySQL.
                 </p>
               </div>
             </li>
             <li class="timeline__item reveal" data-reveal>
-              <span class="timeline__date">2018 — 2020</span>
+              <span class="timeline__date">2025 — Sekarang</span>
               <div class="timeline__card">
-                <h3 class="timeline__role">Junior Web Programmer</h3>
-                <p class="timeline__company">StartUp Hub Indonesia</p>
+                <h3 class="timeline__role">Junior Web Developer</h3>
+                <p class="timeline__company">Self-Employed / Personal Projects</p>
                 <p class="timeline__text">
-                  Integrasi sistem CMS, perbaikan layout responsif, dan kolaborasi langsung dengan tim desainer grafis.
+                  Membangun portofolio dinamis, mengintegrasikan sistem database Laravel, dan terus berlatih mengimplementasikan arsitektur web modern.
                 </p>
               </div>
             </li>
@@ -416,7 +416,7 @@
               class="contact__form form reveal tilt-wrap"
               data-reveal
               id="contact-form"
-              action="{{ route('contact.store') }}"
+              action="/contact"
               method="POST"
               novalidate
             >
@@ -443,6 +443,29 @@
                     autocomplete="email"
                     required
                     placeholder="email@contoh.com"
+                  />
+                  <span class="form__error" role="alert"></span>
+                </label>
+              </div>
+              <div class="form__row">
+                <label class="form__field">
+                  <span class="form__label">Nomor Telepon</span>
+                  <input
+                    class="form__input"
+                    name="phone"
+                    type="tel"
+                    autocomplete="tel"
+                    placeholder="0812xxxxxx (Opsional)"
+                  />
+                  <span class="form__error" role="alert"></span>
+                </label>
+                <label class="form__field">
+                  <span class="form__label">Subjek</span>
+                  <input
+                    class="form__input"
+                    name="subject"
+                    type="text"
+                    placeholder="Kerjasama / Tanya Harga (Opsional)"
                   />
                   <span class="form__error" role="alert"></span>
                 </label>

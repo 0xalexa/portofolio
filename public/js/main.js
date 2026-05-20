@@ -379,6 +379,10 @@
       });
       if (!ok) return;
 
+      // Ambil FormData sebelum input dinonaktifkan (karena input disabled tidak akan masuk ke FormData)
+      const formData = new FormData(form);
+      const csrfToken = form.querySelector('input[name="_token"]')?.value;
+
       submitBtn.classList.add("is-success");
       submitBtn.disabled = true;
       form.querySelectorAll(".form__input").forEach(function (input) {
@@ -386,12 +390,12 @@
       });
 
       try {
-        const formData = new FormData(form);
         const response = await fetch(form.action, {
           method: form.method,
           body: formData,
           headers: {
-            "Accept": "application/json"
+            "Accept": "application/json",
+            "X-CSRF-TOKEN": csrfToken
           }
         });
 
@@ -400,13 +404,29 @@
             const data = await response.json();
             if (formMessage) formMessage.textContent = data.message || "Pesan berhasil dikirim!";
         } else {
+            console.error("Server merespon dengan status:", response.status);
+            const errData = await response.json().catch(() => null);
+            console.error("Detail error:", errData);
             if (formMessage) formMessage.textContent = "Terjadi kesalahan. Silakan coba lagi.";
+            
+            // Aktifkan kembali input jika gagal agar user bisa memperbaiki
             submitBtn.classList.remove("is-success");
+            submitBtn.disabled = false;
+            form.querySelectorAll(".form__input").forEach(function (input) {
+              input.disabled = false;
+            });
         }
       } catch (error) {
+          console.error("Kesalahan fetch:", error);
           const formMessage = document.getElementById("form-message");
           if (formMessage) formMessage.textContent = "Terjadi kesalahan koneksi.";
+          
+          // Aktifkan kembali input jika gagal
           submitBtn.classList.remove("is-success");
+          submitBtn.disabled = false;
+          form.querySelectorAll(".form__input").forEach(function (input) {
+            input.disabled = false;
+          });
       }
 
       window.setTimeout(function () {
