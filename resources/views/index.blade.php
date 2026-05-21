@@ -197,7 +197,6 @@
 
       <section class="section section--about" id="about">
         <div class="container section__wrap">
-          <span class="section__index" aria-hidden="true">01</span>
           <header class="section__head reveal" data-reveal>
             <span class="section__eyebrow">Tentang Saya</span>
             <h2 class="section__title">Memadukan Estetika dan Logika Kode</h2>
@@ -240,7 +239,6 @@
 
       <section class="section section--skills" id="skills">
         <div class="container section__wrap">
-          <span class="section__index" aria-hidden="true">02</span>
           <header class="section__head reveal" data-reveal>
             <span class="section__eyebrow">Keahlian</span>
             <h2 class="section__title">Teknologi & Tools Utama</h2>
@@ -295,7 +293,6 @@
 
       <section class="section section--work" id="work">
         <div class="container section__wrap">
-          <span class="section__index" aria-hidden="true">03</span>
           <header class="section__head reveal" data-reveal>
             <span class="section__eyebrow">Karya Pilihan</span>
             <h2 class="section__title">Proyek Terkini</h2>
@@ -364,7 +361,6 @@
 
       <section class="section section--timeline" id="timeline">
         <div class="container section__wrap">
-          <span class="section__index" aria-hidden="true">04</span>
           <header class="section__head reveal" data-reveal>
             <span class="section__eyebrow">Perjalanan Saya</span>
             <h2 class="section__title">Pendidikan & Pengalaman</h2>
@@ -406,7 +402,6 @@
 
       <section class="section section--contact" id="contact">
         <div class="container section__wrap">
-          <span class="section__index" aria-hidden="true">05</span>
           <div class="contact">
             <div class="contact__intro reveal" data-reveal>
               <span class="section__eyebrow">Kontak</span>

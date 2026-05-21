@@ -1,9 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ContactController;
 
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Cache;
+
+Route::post('/contact', [ContactController::class, 'store']);
 
 Route::get('/', function () {
     // Mengambil jumlah repository publik dari GitHub dan menyimpannya di Cache selama 1 jam
