@@ -383,7 +383,8 @@
       const formData = new FormData(form);
       const csrfToken = form.querySelector('input[name="_token"]')?.value;
 
-      submitBtn.classList.add("is-success");
+      // Show loading spinner
+      submitBtn.classList.add("is-loading");
       submitBtn.disabled = true;
       form.querySelectorAll(".form__input").forEach(function (input) {
         input.disabled = true;
@@ -399,8 +400,12 @@
           }
         });
 
+        // Remove loading, show result
+        submitBtn.classList.remove("is-loading");
+
         const formMessage = document.getElementById("form-message");
         if (response.ok) {
+            submitBtn.classList.add("is-success");
             const data = await response.json();
             if (formMessage) formMessage.textContent = data.message || "Pesan berhasil dikirim!";
         } else {
@@ -410,7 +415,6 @@
             if (formMessage) formMessage.textContent = "Terjadi kesalahan. Silakan coba lagi.";
             
             // Aktifkan kembali input jika gagal agar user bisa memperbaiki
-            submitBtn.classList.remove("is-success");
             submitBtn.disabled = false;
             form.querySelectorAll(".form__input").forEach(function (input) {
               input.disabled = false;
@@ -421,8 +425,8 @@
           const formMessage = document.getElementById("form-message");
           if (formMessage) formMessage.textContent = "Terjadi kesalahan koneksi.";
           
-          // Aktifkan kembali input jika gagal
-          submitBtn.classList.remove("is-success");
+          // Remove loading & re-enable on error
+          submitBtn.classList.remove("is-loading");
           submitBtn.disabled = false;
           form.querySelectorAll(".form__input").forEach(function (input) {
             input.disabled = false;
@@ -431,6 +435,7 @@
 
       window.setTimeout(function () {
         submitBtn.classList.remove("is-success");
+        submitBtn.classList.remove("is-loading");
         submitBtn.disabled = false;
         form.reset();
         form.querySelectorAll(".form__input").forEach(function (input) {

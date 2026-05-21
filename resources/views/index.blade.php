@@ -485,6 +485,12 @@
                 data-magnetic
               >
                 <span class="btn__glow" aria-hidden="true"></span>
+                <span class="form__submit-spinner" aria-hidden="true">
+                  <svg class="spinner-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <circle class="spinner-circle" cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+                  </svg>
+                  <span class="form__submit-loading-text">Mengirim...</span>
+                </span>
                 <span class="form__submit-text">Kirim Pesan</span>
                 <span class="form__submit-done" hidden aria-hidden="true"
                   >Terkirim — Terima Kasih!</span
