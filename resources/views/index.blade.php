@@ -300,61 +300,38 @@
               Beberapa hasil karya terbaik saya, mencakup situs e-commerce, dashboard perusahaan, hingga sistem manajemen cerdas.
             </p>
           </header>
-          <div class="projects">
-            <article class="project-card reveal tilt-wrap" data-reveal>
-              <a
-                class="project-card__link"
-                href="#"
-                aria-label="Sistem E-Commerce Aura — buka proyek"
-              >
-                <div class="project-card__shine" aria-hidden="true"></div>
-                <div class="project-card__media project-card__media--1"></div>
-                <div class="project-card__body">
-                  <span class="project-card__meta">E‑commerce · 2025</span>
-                  <h3 class="project-card__title">Sistem E-Commerce Aura</h3>
-                  <p class="project-card__desc">
-                    Toko online headless dengan grid fluida dan pemuatan gambar super cepat.
-                  </p>
-                  <span class="project-card__arrow" aria-hidden="true">→</span>
-                </div>
-              </a>
-            </article>
-            <article class="project-card reveal tilt-wrap" data-reveal>
-              <a
-                class="project-card__link"
-                href="#"
-                aria-label="Northwind Analytics — buka proyek"
-              >
-                <div class="project-card__shine" aria-hidden="true"></div>
-                <div class="project-card__media project-card__media--2"></div>
-                <div class="project-card__body">
-                  <span class="project-card__meta">Dashboard · 2024</span>
-                  <h3 class="project-card__title">Northwind Analytics</h3>
-                  <p class="project-card__desc">
-                    Antarmuka padat data yang menenangkan mata dan ramah penggunaan keyboard.
-                  </p>
-                  <span class="project-card__arrow" aria-hidden="true">→</span>
-                </div>
-              </a>
-            </article>
-            <article class="project-card reveal tilt-wrap" data-reveal>
-              <a
-                class="project-card__link"
-                href="#"
-                aria-label="Jimpitan Digital Desa — buka proyek"
-              >
-                <div class="project-card__shine" aria-hidden="true"></div>
-                <div class="project-card__media project-card__media--3"></div>
-                <div class="project-card__body">
-                  <span class="project-card__meta">Sistem Manajemen · 2024</span>
-                  <h3 class="project-card__title">Jimpitan Digital Desa</h3>
-                  <p class="project-card__desc">
-                    Platform pencatatan keuangan warga desa secara digital yang transparan dan efisien.
-                  </p>
-                  <span class="project-card__arrow" aria-hidden="true">→</span>
-                </div>
-              </a>
-            </article>
+          <div class="projects-wrapper">
+            <button class="projects-nav projects-nav--prev magnetic" type="button" aria-label="Proyek Sebelumnya" data-magnetic>
+              <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"></path></svg>
+            </button>
+            <div class="projects" id="projects-slider">
+              @forelse ($projects as $index => $project)
+              <article class="project-card reveal tilt-wrap" data-reveal>
+                <a
+                  class="project-card__link"
+                  href="{{ $project->demo_url ?? $project->repo_url ?? '#' }}"
+                  @if($project->demo_url || $project->repo_url) target="_blank" rel="noopener noreferrer" @endif
+                  aria-label="{{ $project->title }} — buka proyek"
+                >
+                  <div class="project-card__shine" aria-hidden="true"></div>
+                  <div class="project-card__media project-card__media--{{ ($index % 3) + 1 }}" style="{{ $project->image_url ? 'background-image: url('.$project->image_url.'); background-size: cover; background-position: center;' : '' }}"></div>
+                  <div class="project-card__body">
+                    <span class="project-card__meta">Proyek · {{ $project->created_at->format('Y') }}</span>
+                    <h3 class="project-card__title">{{ $project->title }}</h3>
+                    <p class="project-card__desc">
+                      {{ $project->description }}
+                    </p>
+                    <span class="project-card__arrow" aria-hidden="true">→</span>
+                  </div>
+                </a>
+              </article>
+              @empty
+                <p style="grid-column: 1 / -1; text-align: center; color: #a1a1aa; padding: 2rem;">Belum ada proyek terbaru yang ditambahkan. Silakan kelola di Dashboard.</p>
+              @endforelse
+            </div>
+            <button class="projects-nav projects-nav--next magnetic" type="button" aria-label="Proyek Selanjutnya" data-magnetic>
+              <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path></svg>
+            </button>
           </div>
         </div>
       </section>

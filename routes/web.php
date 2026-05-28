@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\ProjectController;
 
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Cache;
@@ -20,9 +21,11 @@ Route::get('/', function () {
         return 5; // Angka default jika gagal mengambil data
     });
 
-    return view('index', ['repoCount' => $repoCount]);
-});
+    $projects = \App\Models\Project::latest()->get();
 
+    return view('index', ['repoCount' => $repoCount, 'projects' => $projects]);
+});
+Route::resource('projects', ProjectController::class);
 Route::get('/index', function () {
     return redirect('/');
 });

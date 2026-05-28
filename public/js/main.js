@@ -469,6 +469,25 @@
     setActiveLink();
   }
 
+  const slider = document.getElementById("projects-slider");
+  const prevBtn = document.querySelector(".projects-nav--prev");
+  const nextBtn = document.querySelector(".projects-nav--next");
+
+  if (slider && prevBtn && nextBtn) {
+    const getScrollAmount = () => {
+      const card = slider.querySelector(".project-card");
+      return card ? card.offsetWidth + 24 : 300; // 24px is roughly 1.5rem gap
+    };
+
+    prevBtn.addEventListener("click", () => {
+      slider.scrollBy({ left: -getScrollAmount(), behavior: "smooth" });
+    });
+
+    nextBtn.addEventListener("click", () => {
+      slider.scrollBy({ left: getScrollAmount(), behavior: "smooth" });
+    });
+  }
+
   if (prefersReducedMotion) {
     document.querySelectorAll("[data-reveal]").forEach(function (el) {
       el.classList.add("is-visible");
