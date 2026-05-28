@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\EducationHistoryController;
 
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Cache;
@@ -39,3 +40,25 @@ Route::get('/cv', function () {
     }
     return response()->download($path, 'Alex_Kusuma_Wardana_CV.pdf');
 });
+
+// ========================================== 
+// ROUTE CRUD EDUCATION HISTORY 
+// ========================================== 
+ 
+// 1. Menampilkan daftar data (READ) 
+Route::get('/education', [EducationHistoryController::class, 'index'])->name('education.index'); 
+ 
+// 2. Menampilkan form tambah data (CREATE) 
+Route::get('/education/create', [EducationHistoryController::class, 'create'])->name('education.create'); 
+ 
+// 3. Memproses penyimpanan data baru (STORE) 
+Route::post('/education', [EducationHistoryController::class, 'store'])->name('education.store'); 
+ 
+// 4. Menampilkan form edit data spesifik berdasarkan ID (EDIT) 
+Route::get('/education/{id}/edit', [EducationHistoryController::class, 'edit'])->name('education.edit'); 
+ 
+// 5. Memproses pembaruan data (UPDATE) 
+Route::put('/education/{id}', [EducationHistoryController::class, 'update'])->name('education.update'); 
+ 
+// 6. Memproses penghapusan data (DELETE) 
+Route::delete('/education/{id}', [EducationHistoryController::class, 'destroy'])->name('education.destroy');
