@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Portofolio Alex Kusuma Wardana — proyek web, keahlian, dan kontak."
+      content="Portofolio Alexa Kusuma Wardana — proyek web, keahlian, dan kontak."
     />
-    <title>Alex Kusuma Wardana — Pengembang Web</title>
+    <title>Alexa Kusuma Wardana — Software Engineering Student</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -38,7 +38,7 @@
       <nav class="nav" aria-label="Primary">
         <a class="nav__brand" href="#top">
           <span class="nav__brand-dot"></span>
-          Alex Kusuma Wardana
+          Alexa Kusuma Wardana
         </a>
         <button
           class="nav__toggle"
@@ -57,7 +57,7 @@
           <li><a class="nav__link" href="#work">Portofolio</a></li>
           <li><a class="nav__link" href="#timeline">Perjalanan</a></li>
           <li>
-            <a class="nav__link" href="{{ asset('cv/Alex_Kusuma_Wardana_CV.pdf') }}" download="Alex_Kusuma_Wardana_CV.pdf">Unduh CV</a>
+            <a class="nav__link" href="{{ asset('cv/Alex_Kusuma_Wardana_CV.pdf') }}" download="Alexa_Kusuma_Wardana_CV.pdf">Unduh CV</a>
           </li>
           <li>
             <a class="nav__link nav__link--cta" href="#contact">Kontak</a>
@@ -102,7 +102,7 @@
             </h1>
 
             <p class="hero__lead reveal" data-reveal data-stagger="4">
-              Pengembang Web Profesional dengan fokus pada antarmuka yang intuitif, desain yang interaktif, dan performa tingkat tinggi.
+              Mahasiswa Teknologi Rekayasa Perangkat Lunak (Software Engineering) dengan pengalaman mengembangkan aplikasi web dan mobile menggunakan Laravel, PHP, JavaScript, dan Flutter.
             </p>
 
             <div class="hero__actions reveal" data-reveal data-stagger="5">
@@ -148,45 +148,31 @@
             >
               <div class="marquee">
                 <div class="marquee__track">
-                  <span>React</span><span>TypeScript</span
-                  ><span>Design systems</span><span>WebGL-ready CSS</span
-                  ><span>Motion</span><span>A11y</span><span>Performance</span
-                  ><span>Storybook</span> <span>React</span
-                  ><span>TypeScript</span><span>Design systems</span
-                  ><span>WebGL-ready CSS</span><span>Motion</span
-                  ><span>A11y</span><span>Performance</span
-                  ><span>Storybook</span>
+                  <span>Laravel</span><span>PHP</span
+                  ><span>JavaScript</span><span>Flutter</span
+                  ><span>MySQL</span><span>HTML5 & CSS3</span><span>Bootstrap</span
+                  ><span>Python</span> <span>Laravel</span
+                  ><span>PHP</span><span>JavaScript</span
+                  ><span>Flutter</span><span>MySQL</span
+                  ><span>HTML5 & CSS3</span><span>Bootstrap</span
+                  ><span>Python</span>
                 </div>
               </div>
             </div>
           </div>
 
-          <aside class="hero__visual" aria-hidden="true">
-            <div class="hero__bento">
-              <div class="hero__float hero__float--1">
-                <span class="hero__float-label">Skor Performa</span>
-                <strong class="hero__float-value">98</strong>
-                <span class="hero__float-unit">/100</span>
-              </div>
-              <div class="hero__float hero__float--2">
-                <span class="hero__pulse"></span>
-                <span>Sistem Aktif</span>
-              </div>
-              <div class="hero__mock">
-                <div class="hero__mock-bar">
-                  <span></span><span></span><span></span>
-                </div>
-                <div class="hero__mock-body">
-                  <div class="hero__mock-row"></div>
-                  <div class="hero__mock-row hero__mock-row--short"></div>
-                  <div class="hero__mock-blocks">
-                    <span></span><span></span><span></span>
-                  </div>
-                </div>
+          <aside class="hero__visual reveal" data-reveal data-stagger="4" aria-hidden="true" style="align-self: flex-start; margin-top: 1.5rem;">
+            <div class="hero__bento" style="position: relative;">
+              <!-- Decorative background glow -->
+              <div style="position: absolute; top: -10%; left: -10%; width: 120%; height: 120%; background: radial-gradient(circle, rgba(59,130,246,0.2) 0%, rgba(0,0,0,0) 70%); z-index: 0; filter: blur(30px); pointer-events: none;"></div>
+              
+              <div class="hero__mock" style="padding: 0; border: 1px solid rgba(255,255,255,0.15); border-radius: 1.5rem; overflow: hidden; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.7), 0 0 50px rgba(59,130,246,0.25); background-image: url('{{ asset('img/pp.png') }}'); background-size: cover; background-position: center 5%; width: 100%; height: 100%; min-height: 400px; position: relative; z-index: 1;">
               </div>
               <div class="hero__ring" aria-hidden="true"></div>
             </div>
           </aside>
+
+
         </div>
 
         <a class="hero__scroll" href="#about">
@@ -207,7 +193,47 @@
           <div class="about__grid">
             <div class="about__visual reveal" data-reveal>
               <div class="about__frame tilt-wrap">
-                <div class="about__photo tilt" data-tilt></div>
+                <div class="about__photo tilt" data-tilt style="padding: 1.5rem; background: rgba(15,23,42,0.9); border: 1px solid rgba(255,255,255,0.1); border-radius: 1rem; font-family: 'Courier New', Courier, monospace; color: #a1a1aa; font-size: 0.9rem; line-height: 1.6; text-align: left; display: flex; flex-direction: column; justify-content: center; box-shadow: 0 10px 30px rgba(0,0,0,0.5); overflow: hidden;">
+                  <style>
+                    @keyframes typeFade {
+                      from { opacity: 0; transform: translateX(-10px); }
+                      to { opacity: 1; transform: translateX(0); }
+                    }
+                    @keyframes blink {
+                      0%, 100% { opacity: 1; }
+                      50% { opacity: 0; }
+                    }
+                    .c-line { opacity: 0; animation: typeFade 0.4s ease-out forwards; white-space: pre; }
+                    .c-cursor { display: inline-block; width: 8px; height: 15px; background: #61afef; animation: blink 1s step-end infinite; vertical-align: middle; margin-left: 4px; }
+                  </style>
+                  <div class="hero__mock-bar" style="margin-bottom: 1.5rem; display: flex;">
+                    <span style="background: #ff5f56; width: 12px; height: 12px; display: inline-block; border-radius: 50%; margin-right: 6px;"></span>
+                    <span style="background: #ffbd2e; width: 12px; height: 12px; display: inline-block; border-radius: 50%; margin-right: 6px;"></span>
+                    <span style="background: #27c93f; width: 12px; height: 12px; display: inline-block; border-radius: 50%;"></span>
+                  </div>
+                  <div style="flex-grow: 1; overflow-x: auto;">
+                    <div class="c-line" style="animation-delay: 0.2s"><span style="color: #c678dd;">const</span> <span style="color: #e5c07b;">developer</span> <span style="color: #56b6c2;">=</span> {</div>
+                    <div class="c-line" style="animation-delay: 0.4s">  name: <span style="color: #98c379;">"Alexa Kusuma Wardana"</span>,</div>
+                    <div class="c-line" style="animation-delay: 0.6s">  role: <span style="color: #98c379;">"Software Engineer"</span>,</div>
+                    <div class="c-line" style="animation-delay: 0.8s">  education: <span style="color: #98c379;">"Politeknik Indonusa Surakarta"</span>,</div>
+                    <div class="c-line" style="animation-delay: 1.0s">  skills: [<span style="color: #98c379;">"Laravel"</span>, <span style="color: #98c379;">"Flutter"</span>, <span style="color: #98c379;">"MySQL"</span>, <span style="color: #98c379;">"PHP"</span>],</div>
+                    <div class="c-line" style="animation-delay: 1.2s">  passion: <span style="color: #98c379;">"Logic, Clean Code & Architecture"</span>,</div>
+                    <div class="c-line" style="animation-delay: 1.4s">  isAvailable: <span style="color: #d19a66;">true</span>,</div>
+                    <div class="c-line" style="animation-delay: 1.6s"></div>
+                    <div class="c-line" style="animation-delay: 1.8s">  <span style="color: #61afef;">buildFuture</span>() {</div>
+                    <div class="c-line" style="animation-delay: 2.0s">    <span style="color: #c678dd;">return</span> <span style="color: #d19a66;">this</span>.skills.join(<span style="color: #98c379;">' + '</span>);</div>
+                    <div class="c-line" style="animation-delay: 2.2s">  },</div>
+                    <div class="c-line" style="animation-delay: 2.4s"></div>
+                    <div class="c-line" style="animation-delay: 2.6s">  <span style="color: #61afef;">execute</span>() {</div>
+                    <div class="c-line" style="animation-delay: 2.8s">    <span style="color: #c678dd;">while</span>(<span style="color: #d19a66;">true</span>) {</div>
+                    <div class="c-line" style="animation-delay: 3.0s">      <span style="color: #d19a66;">this</span>.code(); <span style="color: #d19a66;">this</span>.learn();</div>
+                    <div class="c-line" style="animation-delay: 3.2s">    }</div>
+                    <div class="c-line" style="animation-delay: 3.4s">  }</div>
+                    <div class="c-line" style="animation-delay: 3.6s">};</div>
+                    <div class="c-line" style="animation-delay: 3.8s"></div>
+                    <div class="c-line" style="animation-delay: 4.0s"><span style="color: #e5c07b;">developer</span>.<span style="color: #61afef;">execute</span>();<span class="c-cursor"></span></div>
+                  </div>
+                </div>
                 <div class="about__badge">
                   <span class="about__badge-dot"></span>
                   Siap Berkolaborasi
@@ -216,20 +242,20 @@
             </div>
             <div class="about__copy reveal" data-reveal>
               <p>
-                Berbasis di Indonesia, saya bekerja dengan berbagai klien untuk merancang dan membangun situs web pemasaran, dashboard analitik, dan sistem antarmuka kustom. Saya sangat memperhatikan detail tipografi, harmoni warna, dan animasi interaktif yang meningkatkan UX tanpa mengurangi kecepatan memuat halaman.
+                Berbasis di Boyolali, Jawa Tengah, saya adalah mahasiswa Sarjana Terapan Teknologi Rekayasa Perangkat Lunak di Politeknik Indonusa Surakarta. Saya berdedikasi untuk terus belajar dan menerapkan prinsip rekayasa perangkat lunak dalam pengembangan web dan aplikasi mobile, mulai dari perancangan sistem hingga integrasi database.
               </p>
               <ul class="about__pillars">
                 <li>
                   <span class="about__pillar-icon" aria-hidden="true">◇</span>
-                  <span>Kode HTML & CSS yang bersih dan mudah dirawat</span>
+                  <span>Pengembangan Web & Backend dengan Laravel dan PHP</span>
                 </li>
                 <li>
                   <span class="about__pillar-icon" aria-hidden="true">◇</span>
-                  <span>Desain UI/UX yang responsif dan berstandar global</span>
+                  <span>Pengembangan Aplikasi Mobile dengan Flutter & Dart</span>
                 </li>
                 <li>
                   <span class="about__pillar-icon" aria-hidden="true">◇</span>
-                  <span>Integrasi sistem JavaScript modern & ekosistem React</span>
+                  <span>Perancangan Database Relasional (MySQL) dan Analisis Sistem</span>
                 </li>
               </ul>
             </div>
@@ -245,46 +271,46 @@
           </header>
           <div class="skills">
             <article class="skill-card reveal tilt-wrap" data-reveal>
-              <h3 class="skill-card__title">Pengembangan Web</h3>
-              <div class="skill-bar" data-progress="95">
-                <div class="skill-bar__fill"></div>
-                <span class="skill-bar__label">HTML / CSS / JS Modern</span>
-              </div>
+              <h3 class="skill-card__title">Bahasa Pemrograman</h3>
               <div class="skill-bar" data-progress="90">
                 <div class="skill-bar__fill"></div>
-                <span class="skill-bar__label">React & Next.js</span>
+                <span class="skill-bar__label">PHP & JavaScript</span>
               </div>
-              <div class="skill-bar" data-progress="82">
+              <div class="skill-bar" data-progress="95">
                 <div class="skill-bar__fill"></div>
-                <span class="skill-bar__label">TypeScript & Node.js</span>
-              </div>
-            </article>
-            <article class="skill-card reveal tilt-wrap" data-reveal>
-              <h3 class="skill-card__title">Desain UI/UX & Animasi</h3>
-              <div class="skill-bar" data-progress="85">
-                <div class="skill-bar__fill"></div>
-                <span class="skill-bar__label">Figma</span>
-              </div>
-              <div class="skill-bar" data-progress="80">
-                <div class="skill-bar__fill"></div>
-                <span class="skill-bar__label">Animation / GSAP</span>
+                <span class="skill-bar__label">HTML5 & CSS3</span>
               </div>
               <div class="skill-bar" data-progress="75">
                 <div class="skill-bar__fill"></div>
-                <span class="skill-bar__label">Aksesibilitas Web (A11y)</span>
+                <span class="skill-bar__label">Python & Dart</span>
+              </div>
+            </article>
+            <article class="skill-card reveal tilt-wrap" data-reveal>
+              <h3 class="skill-card__title">Framework & Tools</h3>
+              <div class="skill-bar" data-progress="85">
+                <div class="skill-bar__fill"></div>
+                <span class="skill-bar__label">Laravel & Bootstrap</span>
+              </div>
+              <div class="skill-bar" data-progress="80">
+                <div class="skill-bar__fill"></div>
+                <span class="skill-bar__label">Flutter</span>
+              </div>
+              <div class="skill-bar" data-progress="90">
+                <div class="skill-bar__fill"></div>
+                <span class="skill-bar__label">Git, GitHub & Composer</span>
               </div>
             </article>
             <article class="skill-tags reveal tilt-wrap" data-reveal>
-              <h3 class="skill-card__title">Juga Familiar Dengan</h3>
+              <h3 class="skill-card__title">Basis Data & Lainnya</h3>
               <div class="tags">
-                <span class="tag">Git</span>
-                <span class="tag">Vite</span>
-                <span class="tag">Node basics</span>
-                <span class="tag">REST APIs</span>
-                <span class="tag">Storybook</span>
-                <span class="tag">Cypress</span>
-                <span class="tag">i18n</span>
-                <span class="tag">Performance</span>
+                <span class="tag">MySQL</span>
+                <span class="tag">SQLite</span>
+                <span class="tag">WordPress</span>
+                <span class="tag">Responsive Web Design</span>
+                <span class="tag">System Analysis</span>
+                <span class="tag">Computer Networks</span>
+                <span class="tag">VS Code</span>
+                <span class="tag">Laragon</span>
               </div>
             </article>
           </div>
@@ -309,8 +335,7 @@
               <article class="project-card reveal tilt-wrap" data-reveal>
                 <a
                   class="project-card__link"
-                  href="{{ $project->demo_url ?? $project->repo_url ?? '#' }}"
-                  @if($project->demo_url || $project->repo_url) target="_blank" rel="noopener noreferrer" @endif
+                  href="{{ route('projects.show', $project->id) }}"
                   aria-label="{{ $project->title }} — buka proyek"
                 >
                   <div class="project-card__shine" aria-hidden="true"></div>
@@ -344,32 +369,32 @@
           </header>
           <ol class="timeline">
             <li class="timeline__item reveal" data-reveal>
-              <span class="timeline__date">2025 — Sekarang</span>
+              <span class="timeline__date">2024 — Present</span>
               <div class="timeline__card">
-                <h3 class="timeline__role">Personal Web Projects</h3>
-                <p class="timeline__company">Eksplorasi Mandiri & Portofolio</p>
+                <h3 class="timeline__role">Sarjana Terapan Teknologi Rekayasa Perangkat Lunak</h3>
+                <p class="timeline__company">Politeknik Indonusa Surakarta</p>
                 <p class="timeline__text">
-                  Merancang, membangun, dan mengoptimalkan proyek web fungsional guna mengimplementasikan logika pemrograman tingkat lanjut, integrasi basis data relasional, serta penerapan arsitektur web modern.
+                  Mempelajari Rekayasa Perangkat Lunak, Pengembangan Web, Sistem Basis Data, Aplikasi Mobile, Jaringan Komputer, serta Analisis & Desain Sistem.
                 </p>
               </div>
             </li>
             <li class="timeline__item reveal" data-reveal>
-              <span class="timeline__date">2024 — 2025</span>
+              <span class="timeline__date">2025 — Present</span>
               <div class="timeline__card">
-                <h3 class="timeline__role">Web Development Program</h3>
-                <p class="timeline__company">Bootcamp & Pelatihan Intensif</p>
+                <h3 class="timeline__role">Committee Member</h3>
+                <p class="timeline__company">Himpunan Mahasiswa Teknologi Rekayasa Perangkat Lunak</p>
                 <p class="timeline__text">
-                  Membangun pemahaman komprehensif dan keterampilan praktis dalam perancangan antarmuka web responsif (HTML, CSS, JavaScript) serta pengelolaan data dinamis berbasis framework PHP dan Laravel.
+                  Berpartisipasi dalam mengorganisir acara akademik dan kegiatan mahasiswa, serta berkoordinasi dengan anggota panitia lainnya untuk mendukung persiapan dan pelaksanaan acara.
                 </p>
               </div>
             </li>
             <li class="timeline__item reveal" data-reveal>
-              <span class="timeline__date">2024 — Sekarang</span>
+              <span class="timeline__date">2025</span>
               <div class="timeline__card">
-                <h3 class="timeline__role">Mahasiswa Teknologi Rekayasa Perangkat Lunak</h3>
-                <p class="timeline__company">Program Sarjana Terapan</p>
+                <h3 class="timeline__role">Volunteer</h3>
+                <p class="timeline__company">Solo Anggrek Festival</p>
                 <p class="timeline__text">
-                  Mendalami fondasi rekayasa perangkat lunak, perancangan arsitektur basis data, serta penerapan praktis metodologi pengembangan aplikasi web modern secara sistematis dan terstruktur.
+                  Membantu persiapan acara selama 2 bulan dan mendukung layanan pengunjung sepanjang 7 hari pelaksanaan festival, memfasilitasi aktivitas harian dan bantuan untuk pengunjung.
                 </p>
               </div>
             </li>
@@ -485,7 +510,7 @@
     <footer class="footer">
       <div class="container footer__inner">
         <p class="footer__copy">
-          © <span id="year"></span> Alex Kusuma Wardana. Crafted with HTML, CSS &amp;
+          © <span id="year"></span> Alexa Kusuma Wardana. Crafted with HTML, CSS &amp;
           JS.
         </p>
         <ul class="footer__social">
