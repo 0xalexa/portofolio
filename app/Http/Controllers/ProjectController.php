@@ -39,7 +39,7 @@ class ProjectController extends Controller
 
         Project::create($validatedData);
 
-        return redirect()->route('projects.index')->with('success', 'Project berhasil ditambahkan.');
+        return redirect()->route('projects.index')->with('success', 'Project created successfully.');
     }
 
     public function show(Project $project)
@@ -73,13 +73,13 @@ class ProjectController extends Controller
 
         $project->update($validatedData);
 
-        return redirect()->route('projects.index')->with('success', 'Project berhasil diperbarui.');
+        return redirect()->route('projects.index')->with('success', 'Project updated successfully.');
     }
 
     public function destroy(Project $project)
     {
         $project->delete();
 
-        return redirect()->route('projects.index')->with('success', 'Project berhasil dihapus.');
+        return redirect()->route('projects.index')->with('success', 'Project deleted successfully.');
     }
 }

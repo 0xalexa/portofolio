@@ -4,11 +4,17 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\EducationHistoryController;
+use App\Http\Controllers\AdminAuthController;
 
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Cache;
 
 Route::post('/contact', [ContactController::class, 'store']);
+
+// Admin authentication routes (separate from portfolio)
+Route::get('/admin/login', [AdminAuthController::class, 'showLoginForm'])->name('login');
+Route::post('/admin/login', [AdminAuthController::class, 'login'])->name('admin.login');
+Route::post('/admin/logout', [AdminAuthController::class, 'logout'])->name('admin.logout')->middleware('auth');
 
 Route::get('/', function () {
     // Mengambil jumlah repository publik dari GitHub dan menyimpannya di Cache selama 1 jam
@@ -26,7 +32,18 @@ Route::get('/', function () {
 
     return view('index', ['repoCount' => $repoCount, 'projects' => $projects]);
 });
-Route::resource('projects', ProjectController::class);
+// Protected routes: only authenticated users can manage projects
+Route::middleware('auth')->group(function () {
+    Route::get('projects', [ProjectController::class, 'index'])->name('projects.index');
+    Route::get('projects/create', [ProjectController::class, 'create'])->name('projects.create');
+    Route::post('projects', [ProjectController::class, 'store'])->name('projects.store');
+    Route::get('projects/{project}/edit', [ProjectController::class, 'edit'])->name('projects.edit');
+    Route::put('projects/{project}', [ProjectController::class, 'update'])->name('projects.update');
+    Route::delete('projects/{project}', [ProjectController::class, 'destroy'])->name('projects.destroy');
+});
+
+// Public route: anyone can view a project detail
+Route::get('projects/{project}', [ProjectController::class, 'show'])->name('projects.show');
 Route::get('/index', function () {
     return redirect('/');
 });

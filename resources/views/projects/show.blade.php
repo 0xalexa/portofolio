@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ $project->title }} — Detail Proyek</title>
+    <title>{{ $project->title }} — Project Detail</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Syne:wght@500;600;700;800&display=swap" rel="stylesheet">
@@ -105,21 +105,7 @@
             transform: translateX(-5px);
         }
 
-        .edit-btn {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid var(--border-glass);
-            color: var(--text-main);
-            padding: 0.6rem 1.2rem;
-            border-radius: 2rem;
-            text-decoration: none;
-            font-size: 0.875rem;
-            backdrop-filter: blur(10px);
-            transition: var(--transition);
-        }
-        .edit-btn:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: rgba(255, 255, 255, 0.2);
-        }
+
 
         /* Dashboard Card */
         .dashboard-card {
@@ -303,14 +289,11 @@
 
     <div class="container">
         <div class="header-nav">
-            <a href="{{ route('projects.index') }}" class="back-link">
+            <a href="/#work" class="back-link">
                 <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
                 </svg>
-                Kembali ke Portofolio
-            </a>
-            <a href="{{ route('projects.edit', $project) }}" class="edit-btn">
-                Edit Proyek
+                Back to Portfolio
             </a>
         </div>
 
@@ -321,7 +304,7 @@
                     @if($project->image_url)
                         <img src="{{ $project->image_url }}" alt="Screenshot of {{ $project->title }}">
                     @else
-                        <div class="no-image">Tidak ada pratinjau gambar</div>
+                        <div class="no-image">No image preview available</div>
                     @endif
                 </div>
             </div>
@@ -333,12 +316,12 @@
 
                 <div class="meta-grid">
                     <div class="meta-item">
-                        <span class="meta-label">Tanggal Rilis</span>
+                        <span class="meta-label">Release Date</span>
                         <span class="meta-value">{{ $project->created_at->format('d M Y') }}</span>
                     </div>
                     <div class="meta-item">
                         <span class="meta-label">Status</span>
-                        <span class="meta-value">Selesai / Publik</span>
+                        <span class="meta-value">Completed / Public</span>
                     </div>
                 </div>
 
