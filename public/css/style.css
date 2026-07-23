@@ -718,6 +718,15 @@ body.is-booting {
   }
 }
 
+/* Animated gradient for section titles — hold at white, sweep to color, pause */
+@keyframes section-title-flow {
+  0%      { background-position: 0% 50%; }
+  20%     { background-position: 0% 50%; }
+  50%     { background-position: 100% 50%; }
+  80%     { background-position: 100% 50%; }
+  100%    { background-position: 0% 50%; }
+}
+
 .hero__lead {
   max-width: 34rem;
   color: var(--hero-muted);

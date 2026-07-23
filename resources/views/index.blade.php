@@ -286,7 +286,7 @@
         <div class="container section__wrap">
           <header class="section__head reveal" data-reveal>
             <span class="section__eyebrow">About Me</span>
-            <h2 class="section__title">Blending Aesthetics with Code Logic</h2>
+            <h2 class="section__title" style="background: linear-gradient(105deg, #f8fafc 0%, #f8fafc 20%, #c084fc 45%, #818cf8 65%, #38bdf8 80%, #f8fafc 100%); background-size: 300% auto; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent; animation: section-title-flow 6s ease-in-out infinite; display: inline-block;">Blending Aesthetics with Code Logic</h2>
             <p class="section__intro">
             I connect the dots between engaging design and clean code. My goal is to engineer seamless digital experiences that users love to interact with.</p>
           </header>
@@ -409,7 +409,7 @@
         <div class="container section__wrap">
           <header class="section__head reveal" data-reveal>
             <span class="section__eyebrow">Skills</span>
-            <h2 class="section__title" style="background: linear-gradient(105deg, #f8fafc 0%, #f8fafc 50%, #c084fc 75%, #818cf8 85%, #38bdf8 100%); background-size: 400% auto; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; animation: gradient-flow 10s ease-in-out infinite; display: inline-block;">Core Technologies & Tools</h2>
+            <h2 class="section__title" style="background: linear-gradient(105deg, #f8fafc 0%, #f8fafc 20%, #c084fc 45%, #818cf8 65%, #38bdf8 80%, #f8fafc 100%); background-size: 300% auto; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent; animation: section-title-flow 6s ease-in-out infinite; display: inline-block;">Core Technologies & Tools</h2>
           </header>
           <div class="skills">
             <article class="skill-card reveal tilt-wrap" data-reveal>
@@ -463,7 +463,7 @@
         <div class="container section__wrap">
           <header class="section__head reveal" data-reveal>
             <span class="section__eyebrow">SELECTED PROJECTS</span>
-            <h2 class="section__title">Featured Projects</h2>
+            <h2 class="section__title" style="background: linear-gradient(105deg, #f8fafc 0%, #f8fafc 20%, #c084fc 45%, #818cf8 65%, #38bdf8 80%, #f8fafc 100%); background-size: 300% auto; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent; animation: section-title-flow 6s ease-in-out infinite; display: inline-block;">Featured Projects</h2>
             <p class="section__intro">
             Explore a few of the projects I have created, reflecting my hands-on experience in building digital solutions.
             </p>
@@ -507,7 +507,7 @@
         <div class="container section__wrap">
           <header class="section__head reveal" data-reveal>
             <span class="section__eyebrow">My Journey</span>
-            <h2 class="section__title">Education & Experience</h2>
+            <h2 class="section__title" style="background: linear-gradient(105deg, #f8fafc 0%, #f8fafc 20%, #c084fc 45%, #818cf8 65%, #38bdf8 80%, #f8fafc 100%); background-size: 300% auto; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent; animation: section-title-flow 6s ease-in-out infinite; display: inline-block;">Education & Experience</h2>
           </header>
           <ol class="timeline">
             <li class="timeline__item reveal" data-reveal>
@@ -549,7 +549,7 @@
           <div class="contact">
             <div class="contact__intro reveal" data-reveal>
               <span class="section__eyebrow">Contact</span>
-              <h2 class="section__title">Let's Discuss Your Project</h2>
+              <h2 class="section__title" style="background: linear-gradient(105deg, #f8fafc 0%, #f8fafc 20%, #c084fc 45%, #818cf8 65%, #38bdf8 80%, #f8fafc 100%); background-size: 300% auto; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent; animation: section-title-flow 6s ease-in-out infinite; display: inline-block;">Let's Discuss Your Project</h2>
               <p class="section__intro contact__text">
                 Tell us details about the project you want to create. I will reply to your message as soon as possible.
               </p>
