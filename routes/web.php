@@ -48,14 +48,11 @@ Route::get('/index', function () {
     return redirect('/');
 });
 Route::get('/cv', function () {
-    $path = public_path('cv/Alex_Kusuma_Wardana_CV.pdf');
+    $path = public_path('cv/CV.pdf');
     if (!file_exists($path)) {
-        $pathDouble = public_path('cv/Alex_Kusuma_Wardana_CV.pdf.pdf');
-        if (file_exists($pathDouble)) {
-            $path = $pathDouble;
-        }
+        abort(404, 'CV not found');
     }
-    return response()->download($path, 'Alex_Kusuma_Wardana_CV.pdf');
+    return response()->download($path, 'CV.pdf');
 });
 
 // ========================================== 
