@@ -57,7 +57,7 @@
           <li><a class="nav__link" href="#work">Portofolio</a></li>
           <li><a class="nav__link" href="#timeline">Experience</a></li>
           <li>
-            <a class="nav__link" href="{{ asset('cv/Alex_Kusuma_Wardana_CV.pdf') }}" download="Alexa_Kusuma_Wardana_CV.pdf">Download CV</a>
+            <a class="nav__link" href="{{ asset('cv/CV.pdf') }}" download="CV.pdf">Download CV</a>
           </li>
           <li>
             <a class="nav__link nav__link--cta" href="#contact">Contact</a>
@@ -652,8 +652,7 @@
     <footer class="footer">
       <div class="container footer__inner">
         <p class="footer__copy">
-          © <span id="year"></span> Alexa Kusuma Wardana. Crafted with HTML, CSS &amp;
-          JS.
+          © <span id="year"></span> Alexa Kusuma Wardana.
         </p>
         <ul class="footer__social">
           <li><a href="#" aria-label="GitHub">GitHub</a></li>
