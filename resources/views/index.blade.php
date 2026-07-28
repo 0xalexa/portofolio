@@ -220,13 +220,26 @@
               
                 .profile-card-inner {
                   width: 100%;
-                  background-image: url('{{ asset('img/pp.png') }}');
-                  background-size: cover;
-                  background-position: center 5%;
+                  min-height: 400px;
                   border-radius: 31px;
                   background-color: #0f172a; 
                   z-index: 1;
                   position: relative;
+                  overflow: hidden;
+                  display: flex;
+                  align-items: flex-end;
+                  justify-content: center;
+                }
+               
+                .profile-card-inner img {
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                  object-position: center top;
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  display: block;
                 }
               
                 .profile-glow {
@@ -267,7 +280,9 @@
               <div class="hero__bento" style="position: relative;">
                 <div class="profile-glow"></div>
                 <div class="profile-card-container">
-                  <div class="profile-card-inner"></div>
+                  <div class="profile-card-inner">
+                    <img src="{{ asset('img/pp.png') }}" alt="Alex Kusuma Wardana - Profile Photo">
+                  </div>
                 </div>
                 <div class="hero__ring" aria-hidden="true"></div>
               </div>
@@ -481,7 +496,13 @@
                   aria-label="{{ $project->title }} — buka proyek"
                 >
                   <div class="project-card__shine" aria-hidden="true"></div>
-                  <div class="project-card__media project-card__media--{{ ($index % 3) + 1 }}" style="{{ $project->image_url ? 'background-image: url('.$project->image_url.'); background-size: cover; background-position: center;' : '' }}"></div>
+                  @php
+                      $displayImage = $project->image_url;
+                      if (!$displayImage && $project->screenshots && is_array($project->screenshots) && count($project->screenshots) > 0) {
+                          $displayImage = $project->screenshots[0];
+                      }
+                  @endphp
+                  <div class="project-card__media project-card__media--{{ ($index % 3) + 1 }}" style="{{ $displayImage ? 'background-image: url(\''.$displayImage.'\'); background-size: cover; background-position: center;' : '' }}"></div>
                   <div class="project-card__body">
                     <span class="project-card__meta">Proyek · {{ $project->created_at->format('Y') }}</span>
                     <h3 class="project-card__title">{{ $project->title }}</h3>
@@ -657,7 +678,7 @@
         <ul class="footer__social">
           <li><a href="#" aria-label="GitHub">GitHub</a></li>
           <li><a href="#" aria-label="LinkedIn">LinkedIn</a></li>
-          <li><a href="#" aria-label="Dribbble">Dribbble</a></li>
+          <li><a href="#" aria-label="Dribbble">Dribbble</a></li> 
         </ul>
       </div>
     </footer>

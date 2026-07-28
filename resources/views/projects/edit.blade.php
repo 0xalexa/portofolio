@@ -164,15 +164,31 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="form-label" for="image_upload">Ganti Gambar Project</label>
+                    <label class="form-label" for="image_upload">Ganti Gambar Utama Project (Thumbnail)</label>
                     @if($project->image_url)
                         <div style="margin-bottom: 1rem;">
                             <img src="{{ $project->image_url }}" alt="Current Image" style="max-height: 150px; border-radius: 0.5rem;">
                         </div>
                     @endif
                     <input type="file" id="image_upload" name="image_upload" class="form-control" accept="image/*">
-                    <small style="color: var(--text-muted); display: block; margin-top: 0.5rem;">Biarkan kosong jika tidak ingin mengubah gambar.</small>
+                    <small style="color: var(--text-muted); display: block; margin-top: 0.5rem;">Biarkan kosong jika tidak ingin mengubah gambar utama.</small>
                     @error('image_upload')
+                        <span class="text-danger">{{ $message }}</span>
+                    @enderror
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="screenshots">Tambah/Ganti Screenshots (Multiple)</label>
+                    @if($project->screenshots && count($project->screenshots) > 0)
+                        <div style="margin-bottom: 1rem; display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                            @foreach($project->screenshots as $screenshot)
+                                <img src="{{ $screenshot }}" alt="Screenshot" style="max-height: 100px; border-radius: 0.5rem;">
+                            @endforeach
+                        </div>
+                    @endif
+                    <input type="file" id="screenshots" name="screenshots[]" class="form-control" accept="image/*" multiple>
+                    <small style="color: var(--text-muted); display: block; margin-top: 0.5rem;">Pilih foto baru untuk ditambahkan ke carousel. Foto baru akan ditambahkan (appended).</small>
+                    @error('screenshots.*')
                         <span class="text-danger">{{ $message }}</span>
                     @enderror
                 </div>

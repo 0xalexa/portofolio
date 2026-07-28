@@ -163,10 +163,19 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="form-label" for="image_upload">Upload Gambar Project</label>
+                    <label class="form-label" for="image_upload">Upload Gambar Utama Project (Thumbnail)</label>
                     <input type="file" id="image_upload" name="image_upload" class="form-control" accept="image/*">
-                    <small style="color: var(--text-muted); display: block; margin-top: 0.5rem;">Biarkan kosong jika tidak ingin menambahkan gambar.</small>
+                    <small style="color: var(--text-muted); display: block; margin-top: 0.5rem;">Biarkan kosong jika tidak ingin menambahkan gambar utama.</small>
                     @error('image_upload')
+                        <span class="text-danger">{{ $message }}</span>
+                    @enderror
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="screenshots">Upload Screenshots (Multiple)</label>
+                    <input type="file" id="screenshots" name="screenshots[]" class="form-control" accept="image/*" multiple>
+                    <small style="color: var(--text-muted); display: block; margin-top: 0.5rem;">Pilih beberapa foto sekaligus untuk ditampilkan di carousel preview.</small>
+                    @error('screenshots.*')
                         <span class="text-danger">{{ $message }}</span>
                     @enderror
                 </div>

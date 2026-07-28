@@ -26,6 +26,7 @@ class ProjectController extends Controller
             'image_upload' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
             'demo_url' => 'nullable|url',
             'repo_url' => 'nullable|url',
+            'screenshots.*' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
         ]);
 
         if ($request->hasFile('image_upload')) {
@@ -33,6 +34,16 @@ class ProjectController extends Controller
             $filename = time() . '_' . $file->getClientOriginalName();
             $file->move(public_path('img/projects'), $filename);
             $validatedData['image_url'] = asset('img/projects/' . $filename);
+        }
+
+        if ($request->hasFile('screenshots')) {
+            $screenshotsPaths = [];
+            foreach ($request->file('screenshots') as $file) {
+                $filename = time() . '_' . uniqid() . '_' . $file->getClientOriginalName();
+                $file->move(public_path('img/projects'), $filename);
+                $screenshotsPaths[] = asset('img/projects/' . $filename);
+            }
+            $validatedData['screenshots'] = $screenshotsPaths;
         }
 
         unset($validatedData['image_upload']);
@@ -60,6 +71,7 @@ class ProjectController extends Controller
             'image_upload' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
             'demo_url' => 'nullable|url',
             'repo_url' => 'nullable|url',
+            'screenshots.*' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
         ]);
 
         if ($request->hasFile('image_upload')) {
@@ -67,6 +79,16 @@ class ProjectController extends Controller
             $filename = time() . '_' . $file->getClientOriginalName();
             $file->move(public_path('img/projects'), $filename);
             $validatedData['image_url'] = asset('img/projects/' . $filename);
+        }
+
+        if ($request->hasFile('screenshots')) {
+            $screenshotsPaths = is_array($project->screenshots) ? $project->screenshots : [];
+            foreach ($request->file('screenshots') as $file) {
+                $filename = time() . '_' . uniqid() . '_' . $file->getClientOriginalName();
+                $file->move(public_path('img/projects'), $filename);
+                $screenshotsPaths[] = asset('img/projects/' . $filename);
+            }
+            $validatedData['screenshots'] = $screenshotsPaths;
         }
 
         unset($validatedData['image_upload']);

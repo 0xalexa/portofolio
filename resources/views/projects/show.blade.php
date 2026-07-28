@@ -147,7 +147,7 @@
         .image-wrapper img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain;
             display: block;
             transition: transform 0.7s ease;
         }
@@ -282,6 +282,95 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
+        /* Carousel Styles */
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            border-radius: 1rem;
+            overflow: hidden;
+            border: 1px solid var(--border-glass);
+            aspect-ratio: 16/10;
+            background: rgba(0,0,0,0.3);
+        }
+        
+        .carousel-track {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.4s ease-in-out;
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+        }
+
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0,0,0,0.5);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+            transition: background 0.2s;
+        }
+
+        .carousel-btn:hover {
+            background: rgba(0,0,0,0.8);
+        }
+
+        .carousel-btn.prev {
+            left: 10px;
+        }
+
+        .carousel-btn.next {
+            right: 10px;
+        }
+
+        .carousel-dots {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+            z-index: 10;
+        }
+
+        .carousel-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.3);
+            cursor: pointer;
+            border: none;
+            padding: 0;
+            transition: background 0.3s;
+        }
+
+        .carousel-dot.active {
+            background: rgba(255,255,255,0.9);
+        }
+
+
     </style>
 </head>
 <body>
@@ -300,13 +389,46 @@
         <div class="dashboard-card">
             <!-- Visuals Side -->
             <div class="project-visuals">
-                <div class="image-wrapper">
-                    @if($project->image_url)
-                        <img src="{{ $project->image_url }}" alt="Screenshot of {{ $project->title }}">
-                    @else
+                @php
+                    $images = [];
+                    if ($project->image_url) {
+                        $images[] = $project->image_url;
+                    }
+                    if ($project->screenshots && is_array($project->screenshots)) {
+                        $images = array_merge($images, $project->screenshots);
+                    }
+                @endphp
+
+                @if(count($images) > 0)
+                    <div class="carousel-container" id="projectCarousel">
+                        <div class="carousel-track" id="carouselTrack">
+                            @foreach($images as $img)
+                                <div class="carousel-slide">
+                                    <img src="{{ $img }}" alt="Screenshot of {{ $project->title }}">
+                                </div>
+                            @endforeach
+                        </div>
+                        
+                        @if(count($images) > 1)
+                            <button class="carousel-btn prev" id="prevBtn" aria-label="Previous image">
+                                <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                            </button>
+                            <button class="carousel-btn next" id="nextBtn" aria-label="Next image">
+                                <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                            </button>
+                            
+                            <div class="carousel-dots" id="carouselDots">
+                                @foreach($images as $index => $img)
+                                    <button class="carousel-dot {{ $index === 0 ? 'active' : '' }}" data-index="{{ $index }}" aria-label="Go to slide {{ $index + 1 }}"></button>
+                                @endforeach
+                            </div>
+                        @endif
+                    </div>
+                @else
+                    <div class="carousel-container">
                         <div class="no-image">No image preview available</div>
-                    @endif
-                </div>
+                    </div>
+                @endif
             </div>
 
             <!-- Information Side -->
@@ -343,5 +465,87 @@
             </div>
         </div>
     </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const track = document.getElementById('carouselTrack');
+            if (!track) return;
+            
+            const originalSlides = Array.from(track.children);
+            if (originalSlides.length <= 1) return;
+
+            const nextBtn = document.getElementById('nextBtn');
+            const prevBtn = document.getElementById('prevBtn');
+            const dots = Array.from(document.querySelectorAll('.carousel-dot'));
+            
+            let currentIndex = 1;
+            let isTransitioning = false;
+
+            // Clone first and last slides for seamless infinite loop
+            const firstClone = originalSlides[0].cloneNode(true);
+            const lastClone = originalSlides[originalSlides.length - 1].cloneNode(true);
+            
+            track.appendChild(firstClone);
+            track.insertBefore(lastClone, originalSlides[0]);
+            
+            const slides = Array.from(track.children);
+            
+            // Set initial position (hide the first clone)
+            track.style.transition = 'none';
+            track.style.transform = 'translateX(-100%)';
+
+            const updateDots = (index) => {
+                let dotIndex = index - 1;
+                if (dotIndex < 0) dotIndex = dots.length - 1;
+                if (dotIndex >= dots.length) dotIndex = 0;
+                
+                dots.forEach(dot => dot.classList.remove('active'));
+                dots[dotIndex].classList.add('active');
+            };
+
+            const moveToSlide = (index) => {
+                if (isTransitioning) return;
+                isTransitioning = true;
+                currentIndex = index;
+                
+                track.style.transition = 'transform 0.4s ease-in-out';
+                track.style.transform = `translateX(-${currentIndex * 100}%)`;
+                
+                updateDots(currentIndex);
+            };
+
+            track.addEventListener('transitionend', () => {
+                isTransitioning = false;
+                
+                // Seamlessly jump back if at clone boundaries
+                if (currentIndex === 0) {
+                    track.style.transition = 'none';
+                    currentIndex = slides.length - 2;
+                    track.style.transform = `translateX(-${currentIndex * 100}%)`;
+                } else if (currentIndex === slides.length - 1) {
+                    track.style.transition = 'none';
+                    currentIndex = 1;
+                    track.style.transform = `translateX(-${currentIndex * 100}%)`;
+                }
+            });
+
+            nextBtn.addEventListener('click', () => {
+                if (isTransitioning) return;
+                moveToSlide(currentIndex + 1);
+            });
+
+            prevBtn.addEventListener('click', () => {
+                if (isTransitioning) return;
+                moveToSlide(currentIndex - 1);
+            });
+
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    moveToSlide(index + 1);
+                });
+            });
+            
+            updateDots(currentIndex);
+        });
+    </script>
 </body>
 </html>

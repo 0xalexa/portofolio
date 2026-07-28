@@ -13,7 +13,12 @@ class Project extends Model
         'title',
         'description',
         'image_url',
+        'screenshots',
         'demo_url',
         'repo_url',
+    ];
+
+    protected $casts = [
+        'screenshots' => 'array',
     ];
 }
